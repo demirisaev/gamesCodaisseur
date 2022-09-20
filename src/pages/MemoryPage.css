@@ -9,10 +9,16 @@
 .card-list {
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 120px);
   width: 60%;
-  min-height: 1000px;
+  min-height: 500px;
+  align-items: center;
   justify-content: center;
   border: 1px solid red;
   margin: 0 auto;
+}
+
+.Card {
+  align-self: center;
+  justify-self: center;
 }

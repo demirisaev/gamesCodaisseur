@@ -1,27 +1,39 @@
-.memory-card {
+.card-container {
   position: relative;
 }
 
-.back,
+.card-container img {
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* Image of pokemon front */
+.front {
+  position: absolute;
+  transform: rotateY(90deg);
+  /* rotateY of 90 hides it */
+}
+
+/* front image inside div with flipped class */
+.flipped .front {
+  transform: rotateY(0deg);
+  /* rotateY 0 makes it visible */
+}
+
+/* .back {
+} */
+
+/* .back,
 .front {
   width: 50%;
   position: absolute;
   left: 0;
   top: 0;
-}
-
-/* .flipped .front {
-  transform: rotatex(0deg);
-  transition-delay: 0.2s;
 } */
 
-.back {
+/* .back {
   transition: all 500ms ease-in-out;
   transition-delay: 0.2s;
+  transform: rotatex(0deg);
   z-index: 1000;
-}
-/* 
-.flipped .back {
-  transform: rotateX(90deg);
-  transition-delay: 0s;
 } */

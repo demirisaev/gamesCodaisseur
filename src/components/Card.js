@@ -2,14 +2,22 @@ import { useState, useEffect } from "react";
 import "./Card.css";
 import pokeCard from "../poke-card.jpg";
 
-function Card({ pokemon }) {
+function Card({ mon, handleChoice, flipped }) {
+  function handleClick() {
+    handleChoice(mon.src);
+  }
   return (
-    <article>
-      <div className="memory-card">
-        <img className="back" src={pokeCard} alt="back-side" />
-        <img className="front" src={pokemon.src} alt="" />
+    <div className="card-container">
+      <div className={flipped ? "flipped" : ""}>
+        <img className="front" src={mon.src} alt="front-side" />
+        <img
+          className="back"
+          src={pokeCard}
+          onClick={handleClick}
+          alt="back-side"
+        />
       </div>
-    </article>
+    </div>
   );
 }
 
