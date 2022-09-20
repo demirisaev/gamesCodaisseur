@@ -1,0 +1,54 @@
+.container {
+  background: linear-gradient(
+    180deg,
+    #dfff00 0%,
+    rgba(255, 255, 255, 0) 83.85%
+  );
+  width: 100%;
+  height: 80vh;
+}
+.row {
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px 20px;
+  display: flex;
+}
+.header {
+  background-color: white;
+  width: 100%;
+  height: 135px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid black; */
+}
+.logo {
+  background-color: tomato;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+.logo p {
+  color: white;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 30px auto;
+  text-align: center;
+  width: 95px;
+}
+.footer {
+  width: 100%;
+  background-color: tomato;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer p {
+  color: white;
+}
