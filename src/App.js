@@ -6,6 +6,8 @@ import {selectAllScores} from "./store/score/selectors";
 import { getAllScores } from './store/score/thunks';
 import { Route, Routes } from 'react-router-dom';
 import {HomePage, MemoryPage} from "./pages";
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,10 +18,12 @@ function App() {
   },[])
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path='/memory' element={<MemoryPage/>} />
       </Routes>
+      <Footer />
     </div>
   );
 }
