@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "./Card.css";
 import pokeCard from "../poke-card.jpg";
 
-function Card({ mon, handleChoice, flipped }) {
-  function handleClick() {
-    handleChoice(mon.src);
-  }
+function Card({ mon, handleChoice, flipped, disabled }) {
+  //   function handleClick(e) {
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //     handleChoice(mon);
+  //   }
   return (
     <div className="card-container">
       <div className={flipped ? "flipped" : ""}>
@@ -13,7 +15,14 @@ function Card({ mon, handleChoice, flipped }) {
         <img
           className="back"
           src={pokeCard}
-          onClick={handleClick}
+          onClick={function (e) {
+            if (disabled === false) {
+              // do stuff only if cards are not disabled
+              e.preventDefault();
+              e.stopPropagation();
+              handleChoice(mon);
+            }
+          }}
           alt="back-side"
         />
       </div>

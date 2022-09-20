@@ -9,7 +9,8 @@
 .card-list {
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(6, 120px);
+  /* grid-template-columns: repeat(6, 130px); */
+  grid-template-columns: repeat(4, 10vw);
   width: 60%;
   min-height: 500px;
   align-items: center;

@@ -11,6 +11,7 @@
 .front {
   position: absolute;
   transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
   /* rotateY of 90 hides it */
 }
 
@@ -20,20 +21,17 @@
   /* rotateY 0 makes it visible */
 }
 
-/* .back {
-} */
-
-/* .back,
-.front {
-  width: 50%;
-  position: absolute;
-  left: 0;
-  top: 0;
-} */
-
-/* .back {
-  transition: all 500ms ease-in-out;
+.back {
+  transition: all ease-in 0.2s;
   transition-delay: 0.2s;
-  transform: rotatex(0deg);
-  z-index: 1000;
-} */
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+
+/* when flipped
+- rotate front into view (0deg) on Y axis
+- rotate back out of view, 90 deg on Y axis
+add transition animations to rotate changes*/
