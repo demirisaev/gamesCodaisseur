@@ -1,0 +1,27 @@
+.memory-card {
+  position: relative;
+}
+
+.back,
+.front {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* .flipped .front {
+  transform: rotatex(0deg);
+  transition-delay: 0.2s;
+} */
+
+.back {
+  transition: all 500ms ease-in-out;
+  transition-delay: 0.2s;
+  z-index: 1000;
+}
+/* 
+.flipped .back {
+  transform: rotateX(90deg);
+  transition-delay: 0s;
+} */
