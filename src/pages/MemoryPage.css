@@ -1,0 +1,24 @@
+.memory-container {
+  width: 100%;
+  min-height: 100%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.card-list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(6, 120px);
+  width: 60%;
+  min-height: 500px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  margin: 0 auto;
+}
+
+.Card {
+  align-self: center;
+  justify-self: center;
+}
