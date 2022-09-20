@@ -105,7 +105,6 @@ export default function MemoryPage() {
                   handleChoice={handleChoice}
                   key={Math.random()}
                   mon={item}
-                  //   flipped === true will set a flip animation class
                   flipped={
                     item.src === cardOne || item.src === cardTwo || item.matched
                   }
