@@ -6,6 +6,12 @@ import { selectAllScores } from "./store/score/selectors";
 import { getAllScores } from "./store/score/thunks";
 
 function App() {
+  const dispatch = useDispatch();
+  const allScores = useSelector(selectAllScores());
+  console.log(allScores);
+  useEffect(() => {
+    dispatch(getAllScores());
+  }, []);
   return (
     <div className="App">
       <Home />
