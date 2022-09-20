@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {selectAllScores} from "./store/score/selectors";
 import { getAllScores } from './store/score/thunks';
+import { Route, Routes } from 'react-router-dom';
+import {HomePage, MemoryPage} from "./pages";
 
 function App() {
   const dispatch = useDispatch();
@@ -14,20 +16,10 @@ function App() {
   },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' element={<HomePage/>} />
+        <Route path='/memory' element={<MemoryPage/>} />
+      </Routes>
     </div>
   );
 }
