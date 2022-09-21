@@ -1,11 +1,11 @@
-.container {
+.homeContent {
   background: linear-gradient(
     180deg,
     #dfff00 0%,
     rgba(255, 255, 255, 0) 83.85%
   );
   width: 100%;
-  height: 80vh;
+  height: 100%;
 }
 .row {
   width: 80%;
