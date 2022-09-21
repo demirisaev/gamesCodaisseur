@@ -1,7 +1,7 @@
 .memory-container {
     width: 100%;
     min-height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     align-items: center;
   }
@@ -16,7 +16,7 @@
     max-height: 500px;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 0 auto;
   }
   

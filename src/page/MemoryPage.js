@@ -119,7 +119,7 @@ export default function MemoryPage({difficulty}) {
   return (
     <div id="MemoryPage">
       <div id="memoryGameCircleDiv">
-        <div id="circle">Memory Game</div>
+        <div id="circle"></div>
         <button onClick={resetGame}>New Game</button>
       </div>
 
