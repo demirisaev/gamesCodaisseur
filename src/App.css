@@ -1,9 +1,10 @@
-.App {
+.App, #root {
   text-align: center;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: 100vh;
+  height: 100%;
+  
 }
+
+
 
 .App-logo {
   height: 40vmin;
