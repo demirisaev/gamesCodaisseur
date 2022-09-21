@@ -5,7 +5,7 @@ import { shuffle } from "lodash";
 import { v4 as uuidv4 } from "uuid";
 import Card from "../component/Card";
 
-export default function MemoryPage() {
+export default function MemoryPage({difficulty}) {
   const [pokemon, setPokemon] = useState(null);
   const [cardOne, setCardOne] = useState(null);
   const [cardTwo, setCardTwo] = useState(null);
@@ -18,42 +18,44 @@ export default function MemoryPage() {
   useEffect(
     function () {
       async function fetchPokemon() {
+        
         try {
           // fetch the data
-          console.log("fetch data");
-
+          console.log("fetch datassss");
+          
           const response = await axios.get(
-            "https://pokeapi.co/api/v2/pokemon/?limit=6"
-          );
-          const pokeArr = response.data.results;
-          if (!pokeArr || pokeArr.length < 1)
+            `https://pokeapi.co/api/v2/pokemon/?limit=${difficulty}`
+            );
+            const pokeArr = response.data.results;
+            if (!pokeArr || pokeArr.length < 1)
             throw new Error("HTTP 4O4, pokemon not found");
-          //   return array of {name,src,matched}
-          const modified = pokeArr.map(function (item, index, arr) {
-            return {
-              name: item.name,
-              src: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                index + 1
-              }.png`,
-              matched: false,
-            };
-          });
-          //   duplicate the data
-          const duplicated = [...modified, ...modified];
-          const duplicatedWithIds = duplicated.map(function (item) {
-            return { ...item, id: uuidv4() };
-          });
-          const shuffled = shuffle(duplicatedWithIds);
-          setPokemon(shuffled);
-        } catch (e) {
-          console.log(e);
-          console.log(e.message);
+            //   return array of {name,src,matched}
+            const modified = pokeArr.map(function (item, index, arr) {
+              return {
+                name: item.name,
+                src: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+                  index + 1
+                }.png`,
+                matched: false,
+              };
+            });
+            //   duplicate the data
+            const duplicated = [...modified, ...modified];
+            const duplicatedWithIds = duplicated.map(function (item) {
+              return { ...item, id: uuidv4() };
+            });
+            const shuffled = shuffle(duplicatedWithIds);
+            setPokemon(shuffled);
+          } catch (e) {
+            console.log(e);
+            console.log(e.message);
+          }
         }
-      }
-
-      fetchPokemon();
+        
+        fetchPokemon();
+        
     },
-    [newFlag]
+    [newFlag, difficulty]
   );
   // -------------------------------------------------  Fetch data
 

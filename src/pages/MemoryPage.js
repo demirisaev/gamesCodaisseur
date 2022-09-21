@@ -20,12 +20,13 @@ export default function MemoryPage() {
       async function fetchPokemon() {
         try {
           // fetch the data
-          console.log("fetch data");
+          console.log("fetch datassssssssss");
 
           const response = await axios.get(
-            "https://pokeapi.co/api/v2/pokemon/?limit=6"
+            "https://pokeapi.co/api/v2/pokemon/?limit=8"
           );
           const pokeArr = response.data.results;
+          console.log(response);
           if (!pokeArr || pokeArr.length < 1)
             throw new Error("HTTP 4O4, pokemon not found");
           //   return array of {name,src,matched}
@@ -60,6 +61,7 @@ export default function MemoryPage() {
   //comparing selected cards
   useEffect(
     function () {
+      console.log('hereeee')
       if (cardOne && cardTwo) {
         // disable all cards immediately once we have 2 selections so that further selections can't be made
         //this can overwrite current ones and break logic

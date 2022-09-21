@@ -10,9 +10,10 @@
     list-style-type: none;
     display: grid;
     /* grid-template-columns: repeat(6, 130px); */
-    grid-template-columns: repeat(4, 10vw);
+    grid-template-columns: repeat(16, auto);
     width: 60%;
     min-height: 500px;
+    max-height: 500px;
     align-items: center;
     justify-content: center;
     border: 1px solid red;
