@@ -10,7 +10,7 @@
 .row {
   width: 80%;
   margin: 10px auto;
-  padding: 10px 20px;
+  padding: 0px 20px;
   display: flex;
 }
 .choose_game {

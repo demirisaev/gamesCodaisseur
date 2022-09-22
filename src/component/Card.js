@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Card.css";
-import pokeCard from "../poke-card.jpeg"
+import pokeCard from "../poke-card.jpeg";
 //pokecardd img doesnt import
 
 function Card({ mon, handleChoice, flipped, disabled }) {
@@ -12,9 +12,9 @@ function Card({ mon, handleChoice, flipped, disabled }) {
   return (
     <div className="card-container">
       <div className={flipped ? "flipped" : ""}>
-        <img className="front" src={mon.src} alt="front-side" />
+        <img className="front " src={mon.src} alt="front-side" />
         <img
-          className="back"
+          className="back memAni"
           src={pokeCard}
           onClick={function (e) {
             if (disabled === false) {

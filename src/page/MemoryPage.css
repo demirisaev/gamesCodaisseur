@@ -1,26 +1,97 @@
 .memory-container {
-    width: 100%;
-    min-height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    align-items: center;
+  width: 100%;
+  height: 0%;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+}
+
+#MemoryPage {
+  transition: height 2s ease;
+}
+
+.card-list {
+  list-style-type: none;
+  display: none;
+  /* grid-template-columns: repeat(6, 130px); */
+  /* grid-template-columns: repeat(16, auto); */
+  width: 60%;
+  height: 0%;
+  /* min-height: 500px; */
+  max-height: 500px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  margin: 0 auto;
+  gap: 10px;
+  opacity: 0;
+
+  transition: opacity 0s ease;
+}
+
+.Card {
+  align-self: center;
+  justify-self: center;
+}
+
+.sixteen {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  height: 100%;
+  opacity: 1;
+}
+
+.twentyfour {
+  display: grid;
+  grid-template-columns: repeat(6, 80px);
+  height: 100%;
+  opacity: 1;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
   }
-  
-  .card-list {
-    list-style-type: none;
-    display: grid;
-    /* grid-template-columns: repeat(6, 130px); */
-    grid-template-columns: repeat(16, auto);
-    width: 60%;
-    min-height: 500px;
-    max-height: 500px;
-    align-items: center;
-    justify-content: center;
-    /* border: 1px solid red; */
-    margin: 0 auto;
+  100% {
+    opacity: 1;
   }
-  
-  .Card {
-    align-self: center;
-    justify-self: center;
+}
+
+.memAni {
+  animation-name: animate;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+}
+
+.balls img:nth-child(2) {
+  position: absolute;
+  top: -140px;
+  right: 10px;
+}
+
+#pokeball {
+  height: 30px;
+  position: absolute;
+  top: -150px;
+  animation-name: pokeball;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+@keyframes pokeball {
+  0% {
+    top: -150px;
+    transform: rotate(0deg);
   }
+  100% {
+    top: 800px;
+    transform: rotate(720deg);
+  }
+}
+
+.pokevis {
+  display: none;
+}
